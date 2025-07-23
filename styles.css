@@ -1,0 +1,626 @@
+/* Custom CSS for Singrauli Municipal Corporation Website */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.header-section {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    padding: 1rem 0;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.hindi-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.english-text {
+    font-size: 12px;
+    color: #e3f2fd;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Home Section Styles */
+.home-section {
+    padding: 2rem 0;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Official Cards - Desktop */
+.official-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+}
+
+.official-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.official-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 1rem;
+}
+
+.official-info h5 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.official-info p {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Main Banner */
+.main-banner {
+    text-align: center;
+    padding: 2rem;
+}
+
+.main-banner img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.main-banner img:hover {
+    transform: scale(1.02);
+}
+
+/* Updates Section - Desktop */
+.updates-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.updates-section h4 {
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.update-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #28a745;
+    transition: all 0.3s ease;
+}
+
+.update-item:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+}
+
+.update-item .badge {
+    margin-bottom: 0.5rem;
+}
+
+.update-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Mobile Layout Styles */
+.mobile-layout {
+    padding: 1rem;
+}
+
+.mobile-official-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+}
+
+.mobile-official-card img {
+    border: 3px solid #007bff;
+}
+
+.mobile-official-card h5 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-official-card p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.mobile-updates-section {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.mobile-updates-section h4 {
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+.mobile-banner {
+    text-align: center;
+}
+
+.mobile-banner img {
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand .logo-text {
+        display: none;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    
+    .home-section {
+        padding: 1rem 0;
+    }
+}
+
+/* ✅ Mobile-specific styles */
+@media (max-width: 576px) {
+    .mobile-layout {
+        padding: 1rem;
+    }
+
+    .mobile-official-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .mobile-official-card .col-4 {
+        text-align: center; /* ✅ Center image in column */
+    }
+
+    .mobile-official-card img {
+        display: block !important;     /* ✅ Ensure image is shown */
+        width: 100%;                   /* Full width of its container */
+        max-width: 100px;              /* ✅ Prevent image from becoming too big */
+        height: auto;                  /* ✅ Keep aspect ratio */
+        border-radius: 50%;            /* ✅ Make it round */
+        object-fit: cover;             /* ✅ Clean fit inside circle */
+        margin: 0 auto;                /* ✅ Center the image */
+    }
+
+    .mobile-official-card h5 {
+        font-size: 16px;
+        margin-bottom: 0.25rem;
+    }
+
+    .mobile-official-card p {
+        font-size: 13px;
+    }
+
+    /* Optional: center or left align text */
+    .mobile-official-card .col-8 {
+        text-align: center;
+    }
+}
+
+
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Department Pages Styles */
+.department-header {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.department-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    opacity: 0.1;
+}
+
+.department-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Head of Department Card */
+.head-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border: 3px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.head-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.head-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.head-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    box-shadow: 0 10px 30px rgba(0,123,255,0.3);
+}
+
+.head-card h3 {
+    color: #333;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.8rem;
+}
+
+.head-card h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Sub-Department Cards */
+.sub-dept-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sub-dept-card:hover::before {
+    transform: translateX(0);
+}
+
+.sub-dept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.sub-dept-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.sub-dept-card h4 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.sub-dept-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Officer Cards */
+.officer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.officer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.officer-card img {
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.officer-card:hover img {
+    border-color: #28a745;
+    transform: scale(1.05);
+}
+
+.officer-card h6 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.officer-card p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.officer-card small {
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* Officers Hierarchy Section */
+.officers-hierarchy {
+    background: #f8f9fa;
+}
+
+.officers-hierarchy h4 {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.officers-hierarchy h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 2px;
+}
+
+/* Responsive Design for Department Pages */
+@media (max-width: 768px) {
+    .department-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .head-card {
+        padding: 2rem;
+    }
+    
+    .head-card img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sub-dept-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .officer-card {
+        margin-bottom: 1rem;
+    }
+    .dropdown-menu {
+    position: static !important;
+    display: block;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+    .department-header h1 {
+        font-size: 2rem;
+    }
+    
+    .head-card {
+        padding: 1.5rem;
+    }
+    
+    .head-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .sub-dept-card {
+        padding: 1.5rem;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .card-icon i {
+        font-size: 1.5rem;
+    }
+    .dropdown-menu {
+    position: static !important;
+    display: block;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 0;
+  }
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #007bff, #0056b3) 1;
+}
+/* Responsive Utility Classes */
+.custom-footer {
+  background-color: #007bff;
+}

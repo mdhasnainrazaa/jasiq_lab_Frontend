@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Department - Singrauli Municipal Corporation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img me-2">
+                    <div class="logo-text">
+                        <span class="hindi-text">Singrauli Municipal Corporation</span>
+                        <span class="english-text">सिंगरौली नगर निगम</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white active" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown">
+                                DEPARTMENTS
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="district-collector.html">District Collector</a></li>
+                                <li><a class="dropdown-item active" href="police-department.html">Police Department</a></li>
+                                <li><a class="dropdown-item" href="health-department.html">Health Department</a></li>
+                                <li><a class="dropdown-item" href="education-department.html">Education Department</a></li>
+                                <li><a class="dropdown-item" href="agriculture-department.html">Agriculture Department</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html#about">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html#contact">CITIZEN CORNER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html#services">ONLINE SERVICES</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Department Header -->
+    <section class="department-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 mb-3">Police Department</h1>
+                    <p class="lead">Maintaining law and order, crime prevention, and ensuring public safety in Singrauli district.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-shield-alt fa-5x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Head of Department -->
+    <section class="department-head py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Head of Department</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="head-card text-center">
+                        <img src="https://via.placeholder.com/200x200/f8f9fa/333?text=SP" alt="Superintendent of Police" class="rounded-circle mb-4">
+                        <h3>Shri Vikram Singh, IPS</h3>
+                        <h5 class="text-primary">Superintendent of Police</h5>
+                        <p class="text-muted">M.A. (Criminology), IPS - 2012 Batch</p>
+                        <div class="contact-info mt-4">
+                            <p><i class="fas fa-phone text-primary me-2"></i> +91-7652-244100</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> sp.singrauli@mp.gov.in</p>
+                            <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Police Headquarters, Singrauli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-departments -->
+    <section class="sub-departments py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Sub-Departments</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Traffic Police</h4>
+                        <p>Traffic management, road safety, and vehicle regulation services.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Crime Investigation</h4>
+                        <p>Criminal investigation, forensics, and crime detection activities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h4>Special Branch</h4>
+                        <p>Intelligence gathering and special security operations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h4>Women Cell</h4>
+                        <p>Women safety, domestic violence cases, and gender-related crimes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h4>Juvenile Justice</h4>
+                        <p>Child protection, juvenile crimes, and rehabilitation programs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="sub-dept-card">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Emergency Response</h4>
+                        <p>Emergency services, disaster response, and public safety coordination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Officers Hierarchy -->
+    <section class="officers-hierarchy py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Officers Hierarchy</h2>
+            <div class="row">
+                <!-- Senior Level -->
+                <div class="col-12 mb-4">
+                    <h4 class="text-primary mb-3">Senior Level Officers</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=ASP" alt="ASP" class="rounded-circle mb-2">
+                                <h6>Shri Rajesh Mishra, IPS</h6>
+                                <p class="text-primary mb-1">Additional SP</p>
+                                <small class="text-muted">Crime & Investigation</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=DSP" alt="DSP" class="rounded-circle mb-2">
+                                <h6>Smt. Kavita Sharma</h6>
+                                <p class="text-primary mb-1">Deputy SP</p>
+                                <small class="text-muted">Headquarters</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=DSP" alt="DSP" class="rounded-circle mb-2">
+                                <h6>Shri Anil Kumar</h6>
+                                <p class="text-primary mb-1">Deputy SP</p>
+                                <small class="text-muted">Traffic & Security</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Level -->
+                <div class="col-12 mb-4">
+                    <h4 class="text-primary mb-3">Middle Level Officers</h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=Ins" alt="Inspector" class="rounded-circle mb-2">
+                                <h6>Shri Suresh Yadav</h6>
+                                <p class="text-primary mb-1">Inspector</p>
+                                <small class="text-muted">City Police Station</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=Ins" alt="Inspector" class="rounded-circle mb-2">
+                                <h6>Smt. Priya Gupta</h6>
+                                <p class="text-primary mb-1">Inspector</p>
+                                <small class="text-muted">Women Police Station</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=Ins" alt="Inspector" class="rounded-circle mb-2">
+                                <h6>Shri Ramesh Singh</h6>
+                                <p class="text-primary mb-1">Inspector</p>
+                                <small class="text-muted">Waidhan Police Station</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/80x80/f8f9fa/333?text=Ins" alt="Inspector" class="rounded-circle mb-2">
+                                <h6>Shri Manoj Tiwari</h6>
+                                <p class="text-primary mb-1">Inspector</p>
+                                <small class="text-muted">Traffic Police</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Junior Level -->
+                <div class="col-12">
+                    <h4 class="text-primary mb-3">Junior Level Officers</h4>
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=SI" alt="SI" class="rounded-circle mb-2">
+                                <h6>Shri Vijay Kumar</h6>
+                                <p class="text-primary mb-1">Sub Inspector</p>
+                                <small class="text-muted">Beat 1</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=SI" alt="SI" class="rounded-circle mb-2">
+                                <h6>Smt. Sunita Devi</h6>
+                                <p class="text-primary mb-1">Sub Inspector</p>
+                                <small class="text-muted">Beat 2</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=HC" alt="Head Constable" class="rounded-circle mb-2">
+                                <h6>Shri Ravi Sharma</h6>
+                                <p class="text-primary mb-1">Head Constable</p>
+                                <small class="text-muted">Patrol Unit 1</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=HC" alt="Head Constable" class="rounded-circle mb-2">
+                                <h6>Smt. Rekha Patel</h6>
+                                <p class="text-primary mb-1">Head Constable</p>
+                                <small class="text-muted">Patrol Unit 2</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=PC" alt="Police Constable" class="rounded-circle mb-2">
+                                <h6>Shri Deepak Jain</h6>
+                                <p class="text-primary mb-1">Police Constable</p>
+                                <small class="text-muted">Traffic Point 1</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="officer-card">
+                                <img src="https://via.placeholder.com/60x60/f8f9fa/333?text=PC" alt="Police Constable" class="rounded-circle mb-2">
+                                <h6>Smt. Anita Singh</h6>
+                                <p class="text-primary mb-1">Police Constable</p>
+                                <small class="text-muted">Traffic Point 2</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+  .bg-blue {
+    background-color: #007bff !important;
+  }
+</style>
+
+<footer class="bg-blue text-white py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; 2025 Singrauli Municipal Corporation. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <a href="index.html" class="text-white me-3">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
