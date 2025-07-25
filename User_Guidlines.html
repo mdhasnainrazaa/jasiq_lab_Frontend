@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guidelines - Singrauli Municipal Corporation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --dark-text: #2c3e50;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* General Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            box-shadow: var(--shadow);
+            padding: 0.75rem 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-text {
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .logo-text .hindi-text {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text .english-text {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            padding: 8px 16px !important;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Main Content */
+        .guidelines-section {
+            padding: 80px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .guidelines-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .guidelines-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+        }
+
+        .guidelines-header p {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guideline-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guideline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-dark));
+        }
+
+        .guideline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .guideline-item h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guideline-item h3 i {
+            font-size: 1.2rem;
+        }
+
+        .guideline-item p,
+        .guideline-item li {
+            font-size: 1rem;
+            color: var(--dark-text);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .guideline-item ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .guideline-item ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+
+        .guideline-item ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .guideline-item ul li.success::before {
+            background-color: var(--success-color);
+            content: '✓';
+            width: auto;
+            height: auto;
+            font-weight: bold;
+            color: var(--success-color);
+            top: 0;
+        }
+
+        .guideline-item ul li.danger::before {
+            background-color: var(--danger-color);
+            content: '✗';
+            width: auto;
+            height: auto;
+            font-weight: bold;
+            color: var(--danger-color);
+            top: 0;
+        }
+
+        .guideline-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .guideline-item a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .guidelines-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .guideline-item {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                height: 40px;
+                width: 40px;
+            }
+            
+            .logo-text .hindi-text {
+                font-size: 1rem;
+            }
+            
+            .logo-text .english-text {
+                font-size: 0.8rem;
+            }
+            
+            .guidelines-section {
+                padding: 60px 0;
+            }
+            
+            .guidelines-header {
+                margin-bottom: 40px;
+            }
+            
+            .guidelines-header h1 {
+                font-size: 1.9rem;
+            }
+            
+            .guidelines-header p {
+                font-size: 1rem;
+            }
+            
+            .guideline-item {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .guideline-item h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .guidelines-header h1 {
+                font-size: 1.7rem;
+            }
+            
+            .guideline-item {
+                padding: 15px;
+            }
+            
+            .guideline-item h3 {
+                font-size: 1.1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 5px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="hindi-text">Singrauli Municipal Corporation</span>
+                        <span class="english-text">सिंगरौली नगर निगम</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">
+                                <i class="fas fa-home me-1"></i>HOME
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-building me-1"></i>DEPARTMENTS
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.digitalsingrauli.com/p/nagar-palika-nigam-wards.html">Nagar Negam</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="corporationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-users me-1"></i>CORPORATION
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./Commissioner.html">Commissioner</a></li>
+                                <li><a class="dropdown-item" href="./Chairman.html">Chairman</a></li>
+                                <li><a class="dropdown-item" href="./RTI.html">RTI</a></li>
+                                <li><a class="dropdown-item" href="./PrivacyPolicy.html">Privacy Policy</a></li>
+                                <li><a class="dropdown-item" href="./User_Guidlines.html">User Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html#gallery">
+                                <i class="fas fa-trophy me-1"></i>AWARD & GALLERY
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- User Guidelines Section -->
+        <section id="user-guidelines" class="guidelines-section">
+            <div class="container">
+                <div class="guidelines-header">
+                    <h1><i class="fas fa-book-open me-3"></i>User Guidelines</h1>
+                    <p>Your comprehensive guide to using our municipal services effectively and safely</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-bullseye"></i>Purpose of the Website</h3>
+                            <p>This website provides essential services, information, and updates from the Municipal Corporation for the benefit of citizens, businesses, and visitors. Our goal is to make municipal services accessible, transparent, and efficient for all users.</p>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-mouse-pointer"></i>How to Use Website Features</h3>
+                            <ul>
+                                <li>Use the navigation menu to explore services, departments, and announcements</li>
+                                <li>Use the search bar to find specific content quickly</li>
+                                <li>Forms and documents are available for download under the "Downloads" section</li>
+                                <li>Submit forms online using the provided instructions and guidelines</li>
+                                <li>Check the status of your applications through the tracking system</li>
+                            </ul>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-universal-access"></i>Accessibility and Language Support</h3>
+                            <p>This website is designed to be accessible to all users, including those with disabilities. We support screen readers and provide keyboard navigation options. Language selection options are available in both Hindi and English to serve our diverse community better.</p>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-headset"></i>Contact and Help Desk</h3>
+                            <p>Need assistance? Our support team is here to help you navigate our services and resolve any technical issues you may encounter.</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope me-2"></i>Email: <a href="mailto:support@municipal.gov.in">support@municipal.gov.in</a></p>
+                                <p><i class="fas fa-phone me-2"></i>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+                                <p><i class="fas fa-clock me-2"></i>Hours: Monday - Friday, 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-check-circle"></i>Dos and Don'ts</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="text-success mb-3"><i class="fas fa-thumbs-up me-2"></i>Do's</h5>
+                                    <ul>
+                                        <li class="success">Check official announcements regularly</li>
+                                        <li class="success">Use accurate details while filling out forms</li>
+                                        <li class="success">Keep your login credentials secure</li>
+                                        <li class="success">Report technical issues promptly</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-danger mb-3"><i class="fas fa-thumbs-down me-2"></i>Don'ts</h5>
+                                    <ul>
+                                        <li class="danger">Share your personal information unnecessarily</li>
+                                        <li class="danger">Misuse any service provided on the site</li>
+                                        <li class="danger">Submit false or misleading information</li>
+                                        <li class="danger">Attempt to access unauthorized areas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-balance-scale"></i>Legal Disclaimers</h3>
+                            <p>The Municipal Corporation is not responsible for any misuse of content or services. All materials are subject to copyright and usage policies. Users are responsible for ensuring the accuracy of information they provide.</p>
+                            <p>Please read our <a href="./PrivacyPolicy.html">Privacy Policy</a> and <a href="#terms">Terms of Use</a> for detailed information about your rights and responsibilities.</p>
+                        </div>
+
+                        <div class="guideline-item">
+                            <h3><i class="fas fa-shield-alt"></i>Safe Browsing Practices</h3>
+                            <ul>
+                                <li>Use strong, unique passwords for your account access</li>
+                                <li>Ensure your internet connection is secure before accessing sensitive services</li>
+                                <li>Log out completely after using municipal services</li>
+                                <li>Do not click on suspicious links claiming to be from this site</li>
+                                <li>Verify the website URL before entering personal information</li>
+                                <li>Keep your browser and security software updated</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                <p>&copy;  2025 JASIQ Labs. All rights reserved </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

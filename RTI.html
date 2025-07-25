@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singrauli Municipal Corporation - Right to Information</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* General Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        .navbar-brand .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            margin-left: 10px;
+        }
+        
+        .hindi-text {
+            display: block;
+            font-weight: 600;
+        }
+        
+        .english-text {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 5px;
+            padding: 8px 15px !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+        
+        /* RTI Cards */
+        .rti-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #007bff;
+        }
+        
+        .rti-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .rti-card h3 {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .rti-card h4 {
+            color: #0056b3;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .rti-card ul {
+            padding-left: 20px;
+        }
+        
+        .rti-card ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 50px 0;
+        }
+        
+        .download-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .download-card i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        .download-card h5 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .btn-download {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #007bff;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .contact-card h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0056b3;
+            color: white;
+            padding: 40px 0 20px 0;
+        }
+        
+        .footer h6 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .rti-card {
+                padding: 20px;
+            }
+            
+            .logo-text {
+                font-size: 0.8rem;
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .contact-section {
+                padding: 40px 0;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="hindi-text">सिंगरौली नगर निगम</span>
+                        <span class="english-text">Singrauli Municipal Corporation</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">HOME</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                DEPARTMENTS
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.digitalsingrauli.com/p/nagar-palika-nigam-wards.html" target="_blank" rel="noopener noreferrer">Nagar Nigam</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">CORPORATION</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./Commissioner.html">Commissioner</a></li>
+                                <li><a class="dropdown-item" href="./Chairman.html">Chairman</a></li>
+                                <li><a class="dropdown-item" href="./RTI.html">RTI</a></li>
+                                <li><a class="dropdown-item" href="./PrivacyPolicy.html">Privacy Policy</a></li>
+                                <li><a class="dropdown-item" href="./User_Guidelines.html">User Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">AWARDS & GALLERY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="fade-in">Right to Information</h1>
+                    <p class="fade-in">सूचना का अधिकार - पारदर्शिता और जवाबदेही के लिए</p>
+                    <p class="fade-in">Empowering citizens through transparency and accountability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RTI Overview Section -->
+    <section class="content-section" id="rti-overview">
+        <div class="container">
+            <h2 class="section-title">RTI Overview</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="rti-card fade-in">
+                        <h3><i class="fas fa-info-circle me-2"></i>What is Right to Information?</h3>
+                        <p>The Right to Information Act, 2005 empowers every citizen of India to seek information from Public Authorities. It aims to promote transparency and accountability in the working of every public authority.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Every citizen has the right to seek information from public authorities</li>
+                            <li>Information must be provided within 30 days (48 hours for life and liberty matters)</li>
+                            <li>Nominal fee structure for obtaining information</li>
+                            <li>Appeal mechanism available for unsatisfactory responses</li>
+                            <li>Penalties for non-compliance by public officials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Apply Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="section-title">How to Apply for RTI</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="rti-card fade-in">
+                        <h3><i class="fas fa-file-alt me-2"></i>Online Application</h3>
+                        <h4>Steps to Apply Online:</h4>
+                        <ul>
+                            <li>Visit the official RTI portal</li>
+                            <li>Register with your basic details</li>
+                            <li>Fill the RTI application form</li>
+                            <li>Pay the prescribed fee online</li>
+                            <li>Submit the application</li>
+                            <li>Note down the application number for tracking</li>
+                        </ul>
+                        <button class="btn btn-download mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>Apply Online
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="rti-card fade-in">
+                        <h3><i class="fas fa-paper-plane me-2"></i>Offline Application</h3>
+                        <h4>Steps to Apply Offline:</h4>
+                        <ul>
+                            <li>Download RTI application form</li>
+                            <li>Fill the form with required details</li>
+                            <li>Attach demand draft/postal order for fee</li>
+                            <li>Submit at the concerned office</li>
+                            <li>Obtain acknowledgment receipt</li>
+                            <li>Track your application status</li>
+                        </ul>
+                        <button class="btn btn-download mt-3">
+                            <i class="fas fa-download me-2"></i>Download Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Fee Structure</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="rti-card fade-in">
+                        <h3><i class="fas fa-rupee-sign me-2"></i>RTI Fee Details</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Application Fee:</h4>
+                                <ul>
+                                    <li>RTI Application: ₹10/-</li>
+                                    <li>First Appeal: ₹10/-</li>
+                                    <li>Second Appeal: ₹10/-</li>
+                                    <li>BPL Citizens: No fee</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Additional Charges:</h4>
+                                <ul>
+                                    <li>Photocopying: ₹2 per page</li>
+                                    <li>Certified Copy: ₹5 per page</li>
+                                    <li>CD/DVD: ₹50 per disc</li>
+                                    <li>Inspection: First hour free, ₹5 for each additional hour</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="download-section">
+        <div class="container">
+            <h2 class="section-title">Downloads & Forms</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="download-card fade-in">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>RTI Application Form</h5>
+                        <p>Download the standard RTI application form</p>
+                        <button class="btn btn-download">
+                            <i class="fas fa-download me-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="download-card fade-in">
+                        <i class="fas fa-file-alt"></i>
+                        <h5>First Appeal Form</h5>
+                        <p>Form for filing first appeal</p>
+                        <button class="btn btn-download">
+                            <i class="fas fa-download me-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="download-card fade-in">
+                        <i class="fas fa-book"></i>
+                        <h5>RTI Manual</h5>
+                        <p>Complete guide to RTI process</p>
+                        <button class="btn btn-download">
+                            <i class="fas fa-download me-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="download-card fade-in">
+                        <i class="fas fa-list"></i>
+                        <h5>Fee Schedule</h5>
+                        <p>Complete fee structure document</p>
+                        <button class="btn btn-download">
+                            <i class="fas fa-download me-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-white">RTI Contact Information</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card fade-in">
+                        <i class="fas fa-user-tie"></i>
+                        <h5>Public Information Officer (PIO)</h5>
+                        <p><strong>Name:</strong> Shri [Name]</p>
+                        <p><strong>Designation:</strong> Assistant Commissioner</p>
+                        <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+                        <p><strong>Email:</strong> pio.singrauli@mp.gov.in</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card fade-in">
+                        <i class="fas fa-gavel"></i>
+                        <h5>First Appellate Authority</h5>
+                        <p><strong>Name:</strong> Shri [Name]</p>
+                        <p><strong>Designation:</strong> Commissioner</p>
+                        <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+                        <p><strong>Email:</strong> commissioner.singrauli@mp.gov.in</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card fade-in">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h5>Office Address</h5>
+                        <p>Singrauli Municipal Corporation</p>
+                        <p>Civil Lines, Singrauli</p>
+                        <p>Madhya Pradesh - 486889</p>
+                        <p><strong>Office Hours:</strong> 10:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy;  2025 JASIQ Labs. All rights reserved </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add active class to navbar items on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Handle download buttons (you can customize these URLs)
+        document.querySelectorAll('.btn-download').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Add your download logic here
+                alert('Download functionality will be implemented with actual file URLs');
+            });
+        });
+    </script>
+</body>
+</html>

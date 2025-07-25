@@ -221,3 +221,9 @@ function initializeBootstrapComponents() {
 
 // Call initialization functions
 initializeBootstrapComponents();
+// Prevent dropdown from closing on inside click
+  document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });

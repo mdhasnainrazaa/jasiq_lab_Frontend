@@ -1,0 +1,857 @@
+/* Commissioner Page CSS */
+
+/* CSS Variables */
+:root {
+    --primary-color: #009dffff;
+    --primary-dark: #0056b3;
+    --secondary-color: #28a745;
+    --text-dark: #333;
+    --text-light: #666;
+    --text-muted: #999;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-medium: 0 5px 20px rgba(0,0,0,0.1);
+    --shadow-heavy: 0 10px 30px rgba(0,0,0,0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+/* Header Styles */
+.header-section {
+    box-shadow: var(--shadow-medium);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 70px;
+    height: 60px;
+    border-radius: 20%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    margin-left: 10px;
+}
+
+.hindi-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.english-text {
+    font-size: 16px;
+    color: #e3f2fd;
+    opacity: 0.9;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Navigation Styles */
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-medium);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Department Header */
+.department-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.department-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    opacity: 0.1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.department-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.department-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.header-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.header-icon i {
+    font-size: 6rem;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    background-color: var(--background-white);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    margin: 0;
+    background: none;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-muted);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 2px;
+}
+
+/* Department Head Section */
+.department-head-section {
+    padding: 4rem 0;
+    background-color: var(--background-white);
+}
+
+.head-card {
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-heavy);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.head-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.head-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.head-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.head-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,123,255,0.3);
+    transition: var(--transition);
+}
+
+.head-image:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+}
+
+.head-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.head-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.head-designation {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.head-qualification {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.contact-details {
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.contact-item span {
+    color: var(--text-dark);
+}
+
+/* Sub Departments Section */
+.sub-departments-section {
+    padding: 4rem 0;
+    background-color: var(--background-light);
+}
+
+.officer-card {
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.officer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--secondary-color), #20c997);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.officer-card:hover::before {
+    transform: translateX(0);
+}
+
+.officer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.officer-image-container {
+    margin-bottom: 1.5rem;
+}
+
+.officer-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.officer-card:hover .officer-image {
+    transform: scale(1.1);
+    border-color: var(--secondary-color);
+}
+
+.officer-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 115px);
+}
+
+.officer-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.officer-designation {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.officer-contact {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.officer-contact .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.officer-contact .contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.officer-contact .contact-item i {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+.officer-contact .contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+    word-break: break-all;
+}
+
+.officer-contact .contact-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.copyright-text {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .department-title {
+        font-size: 2.5rem;
+    }
+    
+    .department-description {
+        font-size: 1.1rem;
+    }
+    
+    .header-icon i {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .head-card {
+        padding: 2rem;
+    }
+    
+    .head-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .head-name {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .department-title {
+        font-size: 2rem;
+    }
+    
+    .department-description {
+        font-size: 1rem;
+    }
+    
+    .header-icon i {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .head-card {
+        padding: 1.5rem;
+    }
+    
+    .head-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+    
+    .head-name {
+        font-size: 1.5rem;
+    }
+    
+    .head-designation {
+        font-size: 1.1rem;
+    }
+    
+    .contact-details {
+        padding: 1rem;
+    }
+    
+    .contact-item {
+        font-size: 0.9rem;
+    }
+    
+    .officer-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .officer-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .officer-name {
+        font-size: 1.1rem;
+    }
+    
+    .officer-designation {
+        font-size: 0.95rem;
+    }
+    
+    .officer-contact {
+        padding: 0.75rem;
+    }
+    
+    .officer-contact .contact-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .logo-text {
+        display: none;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        padding: 10px 15px;
+    }
+    
+    .dropdown-menu {
+        position: static !important;
+        display: block;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(255,255,255,0.95);
+        margin-top: 0;
+    }
+    
+    /* Department header adjustments */
+    .department-header {
+        padding: 3rem 0;
+    }
+    
+    .department-title {
+        font-size: 1.75rem;
+    }
+    
+    .department-description {
+        font-size: 0.95rem;
+    }
+    
+    .header-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .head-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .head-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
+    }
+    
+    .head-name {
+        font-size: 1.3rem;
+    }
+    
+    .head-designation {
+        font-size: 1rem;
+    }
+    
+    .head-qualification {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-details {
+        padding: 0.75rem;
+    }
+    
+    .contact-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        justify-content: center;
+    }
+    
+    .officer-card {
+        padding: 1rem;
+    }
+    
+    .officer-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .officer-name {
+        font-size: 1rem;
+    }
+    
+    .officer-designation {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .officer-contact {
+        padding: 0.5rem;
+    }
+    
+    .officer-contact .contact-item {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hindi-text {
+        font-size: 16px;
+    }
+    
+    .english-text {
+        font-size: 14px;
+    }
+    
+    .department-header {
+        padding: 2rem 0;
+    }
+    
+    .department-title {
+        font-size: 1.5rem;
+    }
+    
+    .department-description {
+        font-size: 0.9rem;
+    }
+    
+    .header-icon i {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .head-card {
+        padding: 0.75rem;
+    }
+    
+    .head-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .head-name {
+        font-size: 1.1rem;
+    }
+    
+    .head-designation {
+        font-size: 0.9rem;
+    }
+    
+    .head-qualification {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-details {
+        padding: 0.5rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .officer-card {
+        padding: 0.75rem;
+    }
+    
+    .officer-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .officer-name {
+        font-size: 0.9rem;
+    }
+    
+    .officer-designation {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .officer-contact {
+        padding: 0.4rem;
+    }
+    
+    .officer-contact .contact-item {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.nav-link:focus,
+.dropdown-item:focus,
+.contact-item a:focus,
+.officer-contact .contact-item a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .header-section,
+    .footer-section,
+    .breadcrumb-section {
+        display: none;
+    }
+    
+    .department-header {
+        background: none !important;
+        color: black !important;
+        padding: 1rem 0;
+    }
+    
+    .head-card,
+    .officer-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+    
+    .head-image,
+    .officer-image {
+        filter: grayscale(100%);
+    }
+}
