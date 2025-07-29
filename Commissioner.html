@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Commissioner Office - Singrauli Municipal Corporation administrative head and sub-departments">
-    <meta name="keywords" content="Commissioner, District Collector, Singrauli, Municipal Corporation, IAS">
+    <meta name="description" content="Municipal Commissioner - Singrauli Municipal Corporation">
+    <meta name="keywords" content="Commissioner, Singrauli, Municipal Corporation, IAS, Madhya Pradesh">
     <title>Commissioner - Singrauli Municipal Corporation</title>
     
     <!-- Bootstrap CSS -->
@@ -12,300 +12,1168 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="commissioner-styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+
+        /* Commissioner Profile */
+        .commissioner-profile {
+            background: #f8f9fa;
+        }
+
+        .commissioner-image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .commissioner-image {
+            width: 100%;
+            max-width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .commissioner-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .service-badge {
+            background: linear-gradient(135deg, #8b5a2b, #a0522d);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(139, 90, 43, 0.3);
+            white-space: nowrap;
+        }
+
+        .service-badge i {
+            margin-right: 0.5rem;
+        }
+
+        .commissioner-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .commissioner-designation {
+            font-size: 1.4rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+
+        .commissioner-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card .card-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem;
+            border-bottom: none;
+        }
+
+        .info-card .card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .info-card .card-body {
+            padding: 2rem;
+        }
+
+        /* Info List */
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-item .label {
+            font-weight: 600;
+            color: #495057;
+            min-width: 120px;
+        }
+
+        .info-item .value {
+            color: #2c3e50;
+            text-align: right;
+            flex: 1;
+        }
+
+        /* Administrative Stats */
+        .administrative-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .stat-item.primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .scope-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scope-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .scope-details li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        .scope-details li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsibilities Grid */
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .responsibility-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .responsibility-item:hover {
+            background: #e9ecef;
+        }
+
+        .responsibility-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .responsibility-icon i {
+            font-size: 1.5rem;
+        }
+
+        .responsibility-content h5 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .responsibility-content p {
+            color: #6c757d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Departments List */
+        .departments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .department-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .department-item:hover {
+            background: #e9ecef;
+        }
+
+        .department-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        /* Powers & Functions */
+        .powers-functions .card-header {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+        }
+
+        .powers-section, .functions-section {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            height: 100%;
+        }
+
+        .powers-section h4, .functions-section h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .powers-list, .functions-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .powers-list li, .functions-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .powers-list li::before {
+            content: '⚖️';
+            position: absolute;
+            left: 0;
+        }
+
+        .functions-list li::before {
+            content: '📋';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Vision Mission */
+        .vision-mission .card-header {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+        }
+
+        .vision-section, .mission-section {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            height: 100%;
+        }
+
+        .vision-section h4, .mission-section h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .mission-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mission-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .mission-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Corporation Stats */
+        .corporation-stats .card-header {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
+        .corp-stat {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .corp-stat .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .corp-stat .stat-icon i {
+            font-size: 1.5rem;
+        }
+
+        .corp-stat .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .corp-stat .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .corporation-description {
+            padding: 1.5rem;
+            background: #e8f8f5;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        /* Alert Styling */
+        .alert-info {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .commissioner-name {
+                font-size: 2rem;
+            }
+
+            .commissioner-designation {
+                font-size: 1.2rem;
+            }
+
+            .commissioner-highlights {
+                margin-top: 2rem;
+            }
+
+            .administrative-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .responsibilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .commissioner-name {
+                font-size: 1.8rem;
+            }
+
+            .commissioner-designation {
+                font-size: 1.1rem;
+            }
+
+            .commissioner-image {
+                max-width: 250px;
+                height: 320px;
+            }
+
+            .highlight-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .highlight-item i {
+                margin: 0 0 0.5rem 0;
+            }
+
+            .info-item {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: left;
+            }
+
+            .info-item .value {
+                text-align: left;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .contact-item i {
+                margin: 0 auto;
+            }
+
+            .responsibility-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .responsibility-icon {
+                margin: 0 auto 1rem auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 3rem 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .commissioner-name {
+                font-size: 1.6rem;
+            }
+
+            .commissioner-image {
+                max-width: 200px;
+                height: 280px;
+            }
+
+            .service-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .info-card .card-body {
+                padding: 1.5rem;
+            }
+
+            .corp-stat .stat-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .corp-stat .stat-icon i {
+                font-size: 1.2rem;
+            }
+
+            .corp-stat .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation Classes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .info-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        .info-card:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        /* Print Styles */
+        @media print {
+            .header-section,
+            .footer-section,
+            .page-header .breadcrumb {
+                display: none;
+            }
+
+            .page-header {
+                background: none !important;
+                color: black !important;
+                padding: 1rem 0;
+            }
+
+            .info-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+
+            .commissioner-image {
+                max-width: 200px;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header-section">
-        <nav class="navbar navbar-expand-lg">
+        <!-- Top Header with Logo and Social Icons -->
+        <div class="top-header">
             <div class="container">
-                <!-- Logo and Brand -->
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img">
-                    <div class="logo-text">
-                        <span class="hindi-text">Singrauli Municipal Corporation</span>
-                        <span class="english-text">सिंगरौली नगर निगम</span>
+                <div class="header-content">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="hindi-text">Singrauli Municipal Corporation</span>
+                            <span class="english-text">नगर पालिका निगम, सिंगरौली</span>
+                        </div>
                     </div>
-                </a>
 
-                <!-- Mobile menu toggle -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <!-- Social Media Section -->
+                    <div class="social-section">
+                        <div class="contact-info">
+                            <span class="helpline-info">
+                                <i class="fas fa-phone-alt"></i>
+                                Helpline: <strong>14420</strong>
+                            </span>
+                            <span class="email-info">
+                                <i class="fas fa-envelope"></i>
+                                <strong>info@smc.singrauli.gov.in</strong>
+                            </span>
+                        </div>
+                        <div class="social-media-links">
+                            <a href="https://facebook.com/singrauli.smc" target="_blank" class="social-media-icon facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/singrauli_smc" target="_blank" class="social-media-icon instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/singrauli_smc" target="_blank" class="social-media-icon youtube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://twitter.com/singrauli_smc" target="_blank" class="social-media-icon twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="mailto:info@smc.singrauli.gov.in" class="social-media-icon gmail" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./index.html">HOME</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                DEPARTMENTS
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
-                                <li><a class="dropdown-item" href="https://www.digitalsingrauli.com/p/nagar-palika-nigam-wards.html" target="_blank" rel="noopener noreferrer">Nagar Nigam</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="corporationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                CORPORATION
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="corporationDropdown">
-                                <li><a class="dropdown-item" href="./Commissioner.html">Commissioner</a></li>
-                                <li><a class="dropdown-item" href="./Chairman.html">Chairman</a></li>
-                                <li><a class="dropdown-item" href="./RTI.html">RTI</a></li>
-                                <li><a class="dropdown-item" href="./PrivacyPolicy.html">Privacy Policy</a></li>
-                                <li><a class="dropdown-item" href="./User_Guidelines.html">User Guidelines</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./index.html#gallery">AWARD & GALLERY</a>
-                        </li>
-                    </ul>
+        <!-- Navigation Bar -->
+        <nav class="navigation-bar">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+
+                    <!-- Navigation Menu -->
+                    <div class="nav-menu" id="navMenu">
+                        <ul class="nav-links">
+                            <li class="nav-item">
+                                <a href="./index.html#" class="nav-link">
+                                    <i class="fas fa-home"></i> Home
+                                </a>
+                            </li>                           
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="corporationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-building"></i> Corporation
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="corporationDropdown">
+                                    <li><a class="dropdown-item" href="./Commissioner.html">
+                                        <i class="fas fa-user-tie"></i> Commissioner
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./Mayor.html">
+                                        <i class="fas fa-user-graduate"></i> Mayor
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./RTI.html">
+                                        <i class="fas fa-info-circle"></i> RTI
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./PrivacyPolicy.html">
+                                        <i class="fas fa-shield-alt"></i> Privacy Policy
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./User_Guidlines.html">
+                                        <i class="fas fa-book"></i> User Guidelines
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="departmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-sitemap"></i> Departments
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
+                                    <li><a class="dropdown-item" href="./NagarNegam.html">
+                                        <i class="fas fa-building-columns"></i> Nagar Negam
+                                    </a></li>
+                                </ul>
+                            </li>
+                              <li class="nav-item">
+                                <a href="./Hoarding.html" class="nav-link">
+                                    <i class="fas fa-city"></i>Hoarding
+                                </a>
+                            </li>
+                              <li class="nav-item">
+                                <a href="./CityInfo.html" class="nav-link">
+                                    <i class="fas fa-city"></i> City Info
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="./Tender.html" class="nav-link">
+                                    <i class="fas fa-file-contract"></i> Tender
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="./Recruitment.html" class="nav-link">
+                                    <i class="fas fa-users"></i> Recruitment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./FAQ.html" class="nav-link">
+                                    <i class="fas fa-question-circle"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index.html#gallery" class="nav-link">
+                                    <i class="fas fa-images"></i> Events & Gallery
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./Contact.html" class="nav-link">
+                                    <i class="fas fa-phone-alt"></i> Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Department Header -->
-    <section class="department-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-7">
-                    <div class="header-content">
-                        <h1 class="department-title">District Collector Office</h1>
-                        <p class="department-description">Administrative head of the district responsible for revenue administration, law and order, and development activities.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-5 text-center">
-                    <div class="header-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+       
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-section" aria-label="breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="#corporation">Corporation</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Commissioner</li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- Head of Department Section -->
-    <section class="department-head-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title text-center">Head of Department</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10 col-12">
-                    <div class="head-card">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
-                                <div class="head-image-container">
-                                    <img src="./assets/home/comissionar.webp" alt="District Collector Shri Rajesh Kumar" class="head-image">
+        <!-- Commissioner Profile Section -->
+        <section class="commissioner-profile py-5">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
+                        <div class="commissioner-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Municipal Commissioner" class="commissioner-image img-fluid">
+                            <div class="image-overlay">
+                                <div class="service-badge">
+                                    <i class="fas fa-medal"></i>
+                                    IAS Officer
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-md-7">
-                                <div class="head-info">
-                                    <h3 class="head-name">Shri Rajesh Kumar, IAS</h3>
-                                    <h4 class="head-designation">District Collector</h4>
-                                    <p class="head-qualification">M.A. (Public Administration), IAS - 2010 Batch</p>
-                                    
-                                    <div class="contact-details">
-                                        <div class="contact-item">
-                                            <i class="fas fa-phone"></i>
-                                            <a href="tel:+917652244001">+91-7652-244001</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-7">
+                        <div class="commissioner-info">
+                            <h2 class="commissioner-name">Municipal Commissioner</h2>
+                            <p class="commissioner-designation">Chief Executive Officer, Singrauli Municipal Corporation</p>
+                            <div class="commissioner-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span><strong>Service:</strong> Indian Administrative Service (IAS)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-building"></i>
+                                    <span><strong>Jurisdiction:</strong> Singrauli Municipal Corporation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span><strong>Role:</strong> Chief Administrative Officer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Cards -->
+                <div class="row g-4">
+                    <!-- Official Information -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-id-card me-2"></i>Official Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="info-list">
+                                    <div class="info-item">
+                                        <span class="label">Service:</span>
+                                        <span class="value">Indian Administrative Service (IAS)</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Position:</span>
+                                        <span class="value">Municipal Commissioner</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Corporation:</span>
+                                        <span class="value">Singrauli Municipal Corporation</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">State:</span>
+                                        <span class="value">Madhya Pradesh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Administrative Scope -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-map-marked-alt me-2"></i>Administrative Scope</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="administrative-stats">
+                                    <div class="stat-item primary">
+                                        <div class="stat-number">45</div>
+                                        <div class="stat-label">Total Wards</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">3.2L+</div>
+                                        <div class="stat-label">Population Served</div>
+                                    </div>
+                                </div>
+                                <div class="scope-details">
+                                    <p><strong>Coverage Area:</strong></p>
+                                    <ul>
+                                        <li>Complete Singrauli Municipal Corporation area</li>
+                                        <li>Energy Capital of India</li>
+                                        <li>Second richest municipal corporation in MP</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Responsibilities -->
+                    <div class="col-12">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-tasks me-2"></i>Key Responsibilities</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="responsibilities-grid">
+                                    <div class="responsibility-item">
+                                        <div class="responsibility-icon">
+                                            <i class="fas fa-cogs"></i>
                                         </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-envelope"></i>
-                                            <a href="mailto:dc.singrauli@mp.gov.in">dc.singrauli@mp.gov.in</a>
+                                        <div class="responsibility-content">
+                                            <h5>Administrative Management</h5>
+                                            <p>Overall supervision of municipal administration, policy implementation, and coordination between departments.</p>
                                         </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Collectorate, Singrauli, MP</span>
+                                    </div>
+                                    <div class="responsibility-item">
+                                        <div class="responsibility-icon">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                        <div class="responsibility-content">
+                                            <h5>Financial Oversight</h5>
+                                            <p>Budget preparation, financial planning, revenue management, and ensuring fiscal responsibility.</p>
+                                        </div>
+                                    </div>
+                                    <div class="responsibility-item">
+                                        <div class="responsibility-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="responsibility-content">
+                                            <h5>Development Planning</h5>
+                                            <p>Urban planning, infrastructure development, and implementation of government schemes.</p>
+                                        </div>
+                                    </div>
+                                    <div class="responsibility-item">
+                                        <div class="responsibility-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="responsibility-content">
+                                            <h5>Public Service Delivery</h5>
+                                            <p>Ensuring efficient delivery of civic services, citizen grievance redressal, and public welfare.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Departments Under Commissioner -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-sitemap me-2"></i>Departments Under Supervision</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="departments-list">
+                                    <div class="department-item">
+                                        <i class="fas fa-tools"></i>
+                                        <span>Engineering & Public Works</span>
+                                    </div>
+                                    <div class="department-item">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Health & Sanitation</span>
+                                    </div>
+                                    <div class="department-item">
+                                        <i class="fas fa-tint"></i>
+                                        <span>Water Supply & Sewerage</span>
+                                    </div>
+                                    <div class="department-item">
+                                        <i class="fas fa-calculator"></i>
+                                        <span>Revenue & Finance</span>
+                                    </div>
+                                    <div class="department-item">
+                                        <i class="fas fa-city"></i>
+                                        <span>Urban Planning</span>
+                                    </div>
+                                    <div class="department-item">
+                                        <i class="fas fa-fire-extinguisher"></i>
+                                        <span>Fire Services</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-address-card me-2"></i>Contact Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <i class="fas fa-building"></i>
+                                        <div>
+                                            <strong>Office:</strong><br>
+                                            Commissioner's Office<br>
+                                            Municipal Corporation Building<br>
+                                            Singrauli, Madhya Pradesh, India
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-clock"></i>
+                                        <div>
+                                            <strong>Office Hours:</strong><br>
+                                            Monday-Friday: 10:00 AM – 5:00 PM<br>
+                                            Saturday: 10:00 AM – 2:00 PM<br>
+                                            Sunday: Closed (Emergency services available)
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone"></i>
+                                        <div>
+                                            <strong>Helpline:</strong><br>
+                                            14420 (Municipal Services)<br>
+                                            <strong>Email:</strong> info@smc.singrauli.gov.in
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Powers & Functions -->
+                    <div class="col-12">
+                        <div class="info-card powers-functions">
+                            <div class="card-header">
+                                <h3><i class="fas fa-gavel me-2"></i>Powers & Functions</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="powers-section">
+                                            <h4><i class="fas fa-balance-scale me-2"></i>Executive Powers</h4>
+                                            <ul class="powers-list">
+                                                <li>Execute Municipal Corporation decisions</li>
+                                                <li>Issue administrative orders and notifications</li>
+                                                <li>Supervise municipal staff and departments</li>
+                                                <li>Coordinate with state government agencies</li>
+                                                <li>Authorize municipal expenditure within limits</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="functions-section">
+                                            <h4><i class="fas fa-clipboard-list me-2"></i>Key Functions</h4>
+                                            <ul class="functions-list">
+                                                <li>Prepare annual budget and development plans</li>
+                                                <li>Implement municipal policies and schemes</li>
+                                                <li>Monitor service delivery standards</li>
+                                                <li>Ensure compliance with regulations</li>
+                                                <li>Handle citizen grievances and complaints</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision & Mission -->
+                    <div class="col-12">
+                        <div class="info-card vision-mission">
+                            <div class="card-header">
+                                <h3><i class="fas fa-bullseye me-2"></i>Administrative Vision & Mission</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="vision-section">
+                                            <h4><i class="fas fa-eye me-2"></i>Vision</h4>
+                                            <p>To establish Singrauli as a model municipal corporation with efficient governance, sustainable development, and citizen-centric services, befitting its status as India's Energy Capital.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mission-section">
+                                            <h4><i class="fas fa-target me-2"></i>Mission</h4>
+                                            <ul class="mission-list">
+                                                <li>Ensure transparent and accountable administration</li>
+                                                <li>Deliver quality civic services efficiently</li>
+                                                <li>Promote sustainable urban development</li>
+                                                <li>Foster citizen participation in governance</li>
+                                                <li>Maintain fiscal discipline and resource optimization</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Corporation Statistics -->
+                    <div class="col-12">
+                        <div class="info-card corporation-stats">
+                            <div class="card-header">
+                                <h3><i class="fas fa-chart-bar me-2"></i>Singrauli Municipal Corporation - Key Statistics</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="corp-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <div class="stat-number">3.2 Lakh</div>
+                                                <div class="stat-label">Population (2025 est.)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="corp-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-map"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <div class="stat-number">45</div>
+                                                <div class="stat-label">Municipal Wards</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="corp-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-industry"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <div class="stat-number">#2</div>
+                                                <div class="stat-label">Richest Municipal Corp in MP</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="corp-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <div class="stat-number">Energy</div>
+                                                <div class="stat-label">Capital of India</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="corporation-description mt-4">
+                                    <p><strong>About Singrauli Municipal Corporation:</strong> Established as a municipal corporation serving the Energy Capital of India, Singrauli is known for its coal reserves, power generation facilities, and growing urban infrastructure. The corporation focuses on balancing industrial development with sustainable urban growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notice for Current Information -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Note:</strong> For current Commissioner details including name, tenure, and direct contact information, please contact the Municipal Corporation office or visit the official website. IAS officers are appointed by the state government and postings may change periodically.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sub Departments Section -->
-    <section class="sub-departments-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title text-center">Sub Departments</h2>
-                </div>
-            </div>
-            <div class="row g-4">
-                <!-- Officer Card 1 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Sub-Divisional Magistrate Shri Amit Verma" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Shri Amit Verma</h5>
-                            <p class="officer-designation">Sub-Divisional Magistrate</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:amit.verma@mp.gov.in">amit.verma@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244001">+91 7652 244001</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Officer Card 2 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Additional District Collector Smt. Priya Sharma" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Smt. Priya Sharma</h5>
-                            <p class="officer-designation">Additional District Collector</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:priya.sharma@mp.gov.in">priya.sharma@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244002">+91 7652 244002</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Officer Card 3 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Chief Executive Officer Dr. Sunita Gupta" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Dr. Sunita Gupta</h5>
-                            <p class="officer-designation">Chief Executive Officer</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:sunita.gupta@mp.gov.in">sunita.gupta@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244003">+91 7652 244003</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Officer Card 4 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Revenue Officer Shri Manoj Singh" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Shri Manoj Singh</h5>
-                            <p class="officer-designation">Revenue Officer</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:manoj.singh@mp.gov.in">manoj.singh@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244004">+91 7652 244004</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Officer Card 5 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Development Officer Smt. Kavita Jain" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Smt. Kavita Jain</h5>
-                            <p class="officer-designation">Development Officer</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:kavita.jain@mp.gov.in">kavita.jain@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244005">+91 7652 244005</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Officer Card 6 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="officer-card">
-                        <div class="officer-image-container">
-                            <img src="./assets/home/comissionar.webp" alt="Administrative Officer Shri Deepak Tiwari" class="officer-image">
-                        </div>
-                        <div class="officer-info">
-                            <h5 class="officer-name">Shri Deepak Tiwari</h5>
-                            <p class="officer-designation">Administrative Officer</p>
-                            <div class="officer-contact">
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:deepak.tiwari@mp.gov.in">deepak.tiwari@mp.gov.in</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+917652244006">+91 7652 244006</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="copyright-text">&copy; 2025 Singrauli Municipal Corporation. All rights reserved.</p>
+                    <p class="copyright-text">&copy; 2025 JASIQ Labs. All rights reserved</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+        <script src="script.js"></script>
+
+
 </body>
 </html>

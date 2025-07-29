@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Commissioner Office - Singrauli Municipal Corporation administrative head and sub-departments">
+    <meta name="keywords" content="Commissioner, District Collector, Singrauli, Municipal Corporation, IAS">
+    <title>Commissioner - Singrauli Municipal Corporation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+        <style>
+/* Commissioner Page CSS */
+
+/* CSS Variables */
+:root {
+    --primary-color: #009dffff;
+    --primary-dark: #0056b3;
+    --secondary-color: #28a745;
+    --text-dark: #333;
+    --text-light: #666;
+    --text-muted: #999;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-medium: 0 5px 20px rgba(0,0,0,0.1);
+    --shadow-heavy: 0 10px 30px rgba(0,0,0,0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+
+
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 2px;
+}
+
+/* Sub Departments Section */
+.sub-departments-section {
+    padding: 4rem 0;
+    background-color: var(--background-light);
+}
+
+.officer-card {
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.officer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--secondary-color), #20c997);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.officer-card:hover::before {
+    transform: translateX(0);
+}
+
+.officer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.officer-image-container {
+    margin-bottom: 1.5rem;
+}
+
+.officer-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.officer-card:hover .officer-image {
+    transform: scale(1.1);
+    border-color: var(--secondary-color);
+}
+
+.officer-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 115px);
+}
+
+.officer-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.officer-designation {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.officer-contact {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.officer-contact .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.officer-contact .contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.officer-contact .contact-item i {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+.officer-contact .contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+    word-break: break-all;
+}
+
+.officer-contact .contact-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.copyright-text {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .officer-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .officer-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .officer-name {
+        font-size: 1.1rem;
+    }
+
+    .officer-designation {
+        font-size: 0.95rem;
+    }
+
+    .officer-contact {
+        padding: 0.75rem;
+    }
+
+    .officer-contact .contact-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-mobile {
+        width: 280px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .officer-card {
+        padding: 1rem;
+    }
+
+    .officer-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .officer-name {
+        font-size: 1rem;
+    }
+
+    .officer-designation {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .officer-contact {
+        padding: 0.5rem;
+    }
+
+    .officer-contact .contact-item {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hindi-text {
+        font-size: 16px;
+    }
+
+    .english-text {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .officer-card {
+        padding: 0.75rem;
+    }
+
+    .officer-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .officer-name {
+        font-size: 0.9rem;
+    }
+
+    .officer-designation {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .officer-contact {
+        padding: 0.4rem;
+    }
+
+    .officer-contact .contact-item {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+</style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <!-- Header Section -->
+    <header class="header-section">
+        <!-- Top Header with Logo and Social Icons -->
+        <div class="top-header">
+            <div class="container">
+                <div class="header-content">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src="./assets/home/logo.jpg" alt="SMC Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="hindi-text">Singrauli Municipal Corporation</span>
+                            <span class="english-text">नगर पालिका निगम, सिंगरौली</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Section -->
+                    <div class="social-section">
+                        <div class="contact-info">
+                            <span class="helpline-info">
+                                <i class="fas fa-phone-alt"></i>
+                                Helpline: <strong>14420</strong>
+                            </span>
+                            <span class="email-info">
+                                <i class="fas fa-envelope"></i>
+                                <strong>info@smc.singrauli.gov.in</strong>
+                            </span>
+                        </div>
+                        <div class="social-media-links">
+                            <a href="https://facebook.com/singrauli.smc" target="_blank" class="social-media-icon facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/singrauli_smc" target="_blank" class="social-media-icon instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/singrauli_smc" target="_blank" class="social-media-icon youtube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://twitter.com/singrauli_smc" target="_blank" class="social-media-icon twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="mailto:info@smc.singrauli.gov.in" class="social-media-icon gmail" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="navigation-bar">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+
+                    <!-- Navigation Menu -->
+                    <div class="nav-menu" id="navMenu">
+                        <ul class="nav-links">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link">
+                                    <i class="fas fa-home"></i> Home
+                                </a>
+                            </li>                           
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="corporationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-building"></i> Corporation
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="corporationDropdown">
+                                    <li><a class="dropdown-item" href="./Commissioner.html">
+                                        <i class="fas fa-user-tie"></i> Commissioner
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./Mayor.html">
+                                        <i class="fas fa-user-graduate"></i> Mayor
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./RTI.html">
+                                        <i class="fas fa-info-circle"></i> RTI
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./PrivacyPolicy.html">
+                                        <i class="fas fa-shield-alt"></i> Privacy Policy
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="./User_Guidlines.html">
+                                        <i class="fas fa-book"></i> User Guidelines
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="departmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-sitemap"></i> Departments
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
+                                    <li><a class="dropdown-item" href="./NagarNegam.html">
+                                        <i class="fas fa-building-columns"></i> Nagar Negam
+                                    </a></li>
+                                </ul>
+                            </li>
+                              <li class="nav-item">
+                                <a href="./Hoarding.html" class="nav-link">
+                                    <i class="fas fa-city"></i>Hoarding
+                                </a>
+                            </li>
+                              <li class="nav-item">
+                                <a href="./CityInfo.html" class="nav-link">
+                                    <i class="fas fa-city"></i> City Info
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="./Tender.html" class="nav-link">
+                                    <i class="fas fa-file-contract"></i> Tender
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="./Recruitment.html" class="nav-link">
+                                    <i class="fas fa-users"></i> Recruitment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./FAQ.html" class="nav-link">
+                                    <i class="fas fa-question-circle"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link">
+                                    <i class="fas fa-images"></i> Events & Gallery
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./Contact.html" class="nav-link">
+                                    <i class="fas fa-phone-alt"></i> Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sub Departments Section -->
+    <section class="sub-departments-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- jbj-->
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Officer Card 1 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Sub-Divisional Magistrate Shri Amit Verma" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Shri Amit Verma</h5>
+                            <p class="officer-designation">Sub-Divisional Magistrate</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:amit.verma@mp.gov.in">amit.verma@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244001">+91 7652 244001</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Officer Card 2 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Additional District Collector Smt. Priya Sharma" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Smt. Priya Sharma</h5>
+                            <p class="officer-designation">Additional District Collector</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:priya.sharma@mp.gov.in">priya.sharma@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244002">+91 7652 244002</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Officer Card 3 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Chief Executive Officer Dr. Sunita Gupta" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Dr. Sunita Gupta</h5>
+                            <p class="officer-designation">Chief Executive Officer</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:sunita.gupta@mp.gov.in">sunita.gupta@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244003">+91 7652 244003</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Officer Card 4 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Revenue Officer Shri Manoj Singh" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Shri Manoj Singh</h5>
+                            <p class="officer-designation">Revenue Officer</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:manoj.singh@mp.gov.in">manoj.singh@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244004">+91 7652 244004</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Officer Card 5 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Development Officer Smt. Kavita Jain" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Smt. Kavita Jain</h5>
+                            <p class="officer-designation">Development Officer</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:kavita.jain@mp.gov.in">kavita.jain@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244005">+91 7652 244005</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Officer Card 6 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="officer-card">
+                        <div class="officer-image-container">
+                            <img src="./assets/home/comissionar.webp" alt="Administrative Officer Shri Deepak Tiwari" class="officer-image">
+                        </div>
+                        <div class="officer-info">
+                            <h5 class="officer-name">Shri Deepak Tiwari</h5>
+                            <p class="officer-designation">Administrative Officer</p>
+                            <div class="officer-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:deepak.tiwari@mp.gov.in">deepak.tiwari@mp.gov.in</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+917652244006">+91 7652 244006</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright-text">&copy; 2025 Singrauli Municipal Corporation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+   
