@@ -321,8 +321,8 @@ body {
 .helpline-number {
     font-weight: 700;
     font-size: 22px;
-    background: #0056b3;
-    color: white;
+    
+    color:  #0056b3;
     padding: 0.2rem 0.8rem;
     border-radius: 20px;
     margin-left: 0.5rem;
